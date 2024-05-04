@@ -1,20 +1,10 @@
-22:29:24 **** Incremental Build of configuration Debug for project 000TestProject ****
+19:32:45 **** Incremental Build of configuration Debug for project 000TestProject ****
 make -j4 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f401retx.d" -MT"Startup/startup_stm32f401retx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f401retx.o" "../Startup/startup_stm32f401retx.s"
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
-arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
-arm-none-eabi-gcc -o "000TestProject.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/ubie/whatever/Embedded-Learning/embedded-c/my_workspace/target/000TestProject/STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="000TestProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 000TestProject.elf
- 
 arm-none-eabi-size  000TestProject.elf 
-arm-none-eabi-objdump -h -S 000TestProject.elf  > "000TestProject.list"
    text	   data	    bss	    dec	    hex	filename
-    664	      0	   1568	   2232	    8b8	000TestProject.elf
+   5984	    100	   2076	   8160	   1fe0	000TestProject.elf
 Finished building: default.size.stdout
  
-Finished building: 000TestProject.list
- 
 
-22:29:24 Build Finished. 0 errors, 0 warnings. (took 273ms)
+19:32:46 Build Finished. 0 errors, 0 warnings. (took 226ms)
 

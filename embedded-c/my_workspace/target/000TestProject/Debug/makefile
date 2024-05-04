@@ -59,8 +59,8 @@ all: main-build
 main-build: 000TestProject.elf secondary-outputs
 
 # Tool invocations
-000TestProject.elf 000TestProject.map: $(OBJS) $(USER_OBJS) /home/ubie/whatever/Embedded-Learning/embedded-c/my_workspace/target/000TestProject/STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "000TestProject.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/ubie/whatever/Embedded-Learning/embedded-c/my_workspace/target/000TestProject/STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="000TestProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+000TestProject.elf 000TestProject.map: $(OBJS) $(USER_OBJS) /home/ubie/whatever/embedded-systems/embedded-learning/embedded-c/my_workspace/target/000TestProject/STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "000TestProject.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/ubie/whatever/embedded-systems/embedded-learning/embedded-c/my_workspace/target/000TestProject/STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="000TestProject.map" -Wl,--gc-sections -static -specs=rdimon.specs -lc -lrdimon --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
