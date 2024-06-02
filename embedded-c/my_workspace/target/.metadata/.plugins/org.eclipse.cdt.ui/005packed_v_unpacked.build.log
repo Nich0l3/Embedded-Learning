@@ -1,0 +1,10 @@
+02:27:23 **** Incremental Build of configuration Debug for project 005packed_v_unpacked ****
+make -j4 all 
+arm-none-eabi-size  005packed_v_unpacked.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5128	     92	   1908	   7128	   1bd8	005packed_v_unpacked.elf
+Finished building: default.size.stdout
+ 
+
+02:27:23 Build Finished. 0 errors, 0 warnings. (took 171ms)
+
