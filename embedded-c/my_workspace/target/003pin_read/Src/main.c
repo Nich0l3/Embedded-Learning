@@ -24,11 +24,11 @@
 
 int main(void)
 {
-	uint32_t * pClkCtrlReg = (uint32_t*)0x40023830; // base + offset (0x30)
+	uint32_t volatile *const pClkCtrlReg = (uint32_t*)0x40023830; // base + offset (0x30)
 
-	uint32_t * pPortAModeReg  = (uint32_t*)0x40020000;
-	uint32_t * pPortAOutReg = (uint32_t*)0x40020014;
-	uint32_t * pPortAInReg = (uint32_t*) 0x40020010;
+	uint32_t volatile *const pPortAModeReg  = (uint32_t*)0x40020000;
+	uint32_t volatile *const pPortAOutReg = (uint32_t*)0x40020014;
+	uint32_t volatile const *const pPortAInReg = (uint32_t*) 0x40020010; // input register should be treated as read-only
 
 	//  1. Enable the peripheral clock enable register for GPIOA (0th bit) peripheral in the RCC_AHB1ENR
 	// PA0 and PA5 are in same port no extra clock enable register is required
@@ -52,12 +52,11 @@ int main(void)
 	// 		set MODER0 in input () here PA0
 	*pPortAModeReg &= ~(3 << 0); // NOT REQUIRED THO :)
 
-
 	// 3. Set 5th bit of the output data register to make I/O pin-5 as HIGH
 
 	while(1){
 		// Read pin status of pin PA0 (GPIO INPUT DATA REGISTER)
-		uint8_t pinStatus = (uint8_t)(*pPortAInReg & 0x1); // masking for 0th bit to get data from 32 bit data
+		uint8_t volatile pinStatus = (uint8_t)(*pPortAInReg & 0x1); // masking for 0th bit to get data from 32 bit data
 
 		if (pinStatus){
 			*pPortAOutReg |= (1 << 5); // set
