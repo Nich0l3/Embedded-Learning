@@ -1,34 +1,12 @@
-02:10:49 **** Build of configuration Debug for project 005packed_v_unpacked ****
+22:49:41 **** Incremental Build of configuration Debug for project 007keypad ****
 make -j4 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f401retx.d" -MT"Startup/startup_stm32f401retx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f401retx.o" "../Startup/startup_stm32f401retx.s"
 arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
-arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
-../Src/main.c:20:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
-   20 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+../Src/main.c:23:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   23 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
       |    ^~~~~~~
-arm-none-eabi-gcc -o "005packed_v_unpacked.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/arch/whatever/embedded-systems/embedded-learning/embedded-c/my_workspace/target/005packed_v_unpacked/STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="005packed_v_unpacked.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 005packed_v_unpacked.elf
- 
-arm-none-eabi-size  005packed_v_unpacked.elf 
-arm-none-eabi-objdump -h -S 005packed_v_unpacked.elf  > "005packed_v_unpacked.list"
-   text	   data	    bss	    dec	    hex	filename
-   5128	     92	   1908	   7128	   1bd8	005packed_v_unpacked.elf
-Finished building: default.size.stdout
- 
-Finished building: 005packed_v_unpacked.list
- 
-02:10:54 **** Incremental Build of configuration Debug for project 005packed_v_unpacked ****
-make -j4 all 
-arm-none-eabi-size  005packed_v_unpacked.elf 
-   text	   data	    bss	    dec	    hex	filename
-   5128	     92	   1908	   7128	   1bd8	005packed_v_unpacked.elf
-Finished building: default.size.stdout
- 
-02:27:23 **** Incremental Build of configuration Debug for project 005packed_v_unpacked ****
-make -j4 all 
-arm-none-eabi-size  005packed_v_unpacked.elf 
-   text	   data	    bss	    dec	    hex	filename
-   5128	     92	   1908	   7128	   1bd8	005packed_v_unpacked.elf
-Finished building: default.size.stdout
- 
+../Src/main.c: In function 'main':
+../Src/main.c:55:9: error: invalid operands to binary * (have 'int' and 'volatile uint32_t *' {aka 'volatile long unsigned int *'})
+   55 |         *pGPIOAModeReg &= AclearMask;
+      |         ^
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
