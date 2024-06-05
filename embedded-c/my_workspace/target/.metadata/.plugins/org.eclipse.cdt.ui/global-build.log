@@ -1,12 +1,24 @@
-22:49:41 **** Incremental Build of configuration Debug for project 007keypad ****
+01:10:21 **** Incremental Build of configuration Debug for project 008toggle_macros ****
 make -j4 all 
 arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
 ../Src/main.c:23:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
    23 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
       |    ^~~~~~~
-../Src/main.c: In function 'main':
-../Src/main.c:55:9: error: invalid operands to binary * (have 'int' and 'volatile uint32_t *' {aka 'volatile long unsigned int *'})
-   55 |         *pGPIOAModeReg &= AclearMask;
-      |         ^
-make: *** [Src/subdir.mk:25: Src/main.o] Error 1
-"make -j4 all" terminated with exit code 2. Build might be incomplete.
+arm-none-eabi-gcc -o "008toggle_macros.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/arch/whatever/embedded-systems/embedded-learning/embedded-c/my_workspace/target/008toggle_macros/STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="008toggle_macros.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 008toggle_macros.elf
+ 
+arm-none-eabi-size  008toggle_macros.elf 
+arm-none-eabi-objdump -h -S 008toggle_macros.elf  > "008toggle_macros.list"
+   text	   data	    bss	    dec	    hex	filename
+    776	      0	   1568	   2344	    928	008toggle_macros.elf
+Finished building: default.size.stdout
+ 
+Finished building: 008toggle_macros.list
+ 
+01:10:27 **** Incremental Build of configuration Debug for project 008toggle_macros ****
+make -j4 all 
+arm-none-eabi-size  008toggle_macros.elf 
+   text	   data	    bss	    dec	    hex	filename
+    776	      0	   1568	   2344	    928	008toggle_macros.elf
+Finished building: default.size.stdout
+ 

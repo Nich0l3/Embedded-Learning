@@ -50,7 +50,7 @@ int main(void)
 	AclearMask |= (3 << 6);
 	AclearMask |= (3 << 4);
 	AclearMask |= (3 << 20);
-	AclearMask |= (3 << 16)
+	AclearMask |= (3 << 16);
 
 	*pGPIOAModeReg &= AclearMask;
 	*pGPIOAModeReg |= AoutputMask;

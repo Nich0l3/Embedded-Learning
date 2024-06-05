@@ -1,7 +1,7 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=linux
-configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:000TestProject Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:led_on,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:002led_toggle,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:003pin_read,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:005packed_v_unpacked,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:006led_toggle_bitFields
+configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:000TestProject Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:led_on,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:002led_toggle,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:003pin_read,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:005packed_v_unpacked,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:006led_toggle_bitFields,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:008toggle_macros
 eclipse.preferences.version=1
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:000TestProject\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:000TestProject\ Debug/activeLaunchTarget=null\:---
